@@ -1,5 +1,6 @@
 package Org.Java.Lessons.Travel.Agency;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Agency {
@@ -14,6 +15,13 @@ public class Agency {
             String usereAnswer = scan.nextLine();
 
             if (usereAnswer.equalsIgnoreCase("Y")){
+                System.out.println("where do you wanto to go?");
+                String destination = scan.nextLine();
+                System.out.println("When do you wanto to leave? yyyy-MM-dd");
+                LocalDate dayOfStart = LocalDate.parse(scan.nextLine());
+                System.out.println("when do you want to go back home? yyyy-MM-dd");
+                LocalDate dayOfEnd = LocalDate.parse(scan.nextLine());
+                break;
 
             } else if (usereAnswer.equalsIgnoreCase("N")) {
                 System.out.println("Thanks for choosing us to book your vacancy");
@@ -21,7 +29,12 @@ public class Agency {
             } else {
                 System.out.println("sorry choose a valid option");
             }
+
+            vacancy = new Vacancy(vacancy.getDestination(), vacancy.getDayOfStart(), vacancy.getDayOfEnd());
+            System.out.println(vacancy);
         }
+
+        System.out.println();
 
     }
 
