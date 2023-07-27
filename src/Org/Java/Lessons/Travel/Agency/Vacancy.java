@@ -2,6 +2,7 @@ package Org.Java.Lessons.Travel.Agency;
 
 import javax.sql.rowset.spi.SyncResolver;
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Vacancy {
 
@@ -73,4 +74,17 @@ public class Vacancy {
 
 
     // METODI
+    public int getDays(){
+        Period dayPeriod = Period.between(dayOfStart, dayOfEnd);
+        return dayPeriod.getDays();
+    }
+
+    @Override
+    public String toString() {
+        return "Vacancy{" +
+                "destination='" + destination + '\'' +
+                ", dayOfStart=" + dayOfStart +
+                ", dayOfEnd=" + dayOfEnd +
+                '}';
+    }
 }
