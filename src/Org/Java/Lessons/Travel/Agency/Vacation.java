@@ -1,10 +1,9 @@
 package Org.Java.Lessons.Travel.Agency;
 
-import javax.sql.rowset.spi.SyncResolver;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Vacancy {
+public class Vacation {
 
     // ATTRIBUTI
 
@@ -17,7 +16,7 @@ public class Vacancy {
 
     // COSTRUTTORI
 
-    public Vacancy(String destination, LocalDate dayOfStart, LocalDate dayOfEnd) {
+    public Vacation(String destination, LocalDate dayOfStart, LocalDate dayOfEnd) {
         // CONTROLI
         // se String destination è vuota
         if (destination == null || destination.isEmpty()){
@@ -33,6 +32,10 @@ public class Vacancy {
         if (dayOfEnd == null || dayOfEnd.isBefore(dayOfStart)){
             throw new RuntimeException("day of end must not be null or before the day of start");
         }
+
+        this.destination = destination;
+        this.dayOfStart = dayOfStart;
+        this.dayOfEnd = dayOfEnd;
     }
 
 
